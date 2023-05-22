@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Project-Id-Version: Auto Coupon For WooCommerce\n"
+"POT-Creation-Date: 2023-05-22 12:12+0330\n"
+"PO-Revision-Date: 2023-05-22 12:16+0330\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: woocommerce-auto-coupon.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: fa_IR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: woocommerce-auto-coupon.php:62
+msgid "Auto apply"
+msgstr "کد تخفیف خودکار"
+
+#: woocommerce-auto-coupon.php:63
+msgid ""
+"Automatically add the coupon to the customer's cart or the admin order page "
+"if the restrictions are met. Please enter a description when you check this "
+"box, the description will be shown in the customer's cart if the coupon is "
+"applied."
+msgstr ""
+"در صورتی که شرایط یک کد تخفیف ایجاد شود، به طور خودکار کد تخفیف را به سبد "
+"خرید مشتری یا صفحه سفارش مدیر اضافه کنید. لطفا هنگام انتخاب این گزینه، یک "
+"توضیحات وارد کنید، اگر کد تخفیف اعمال شود، توضیحات در سبد خرید مشتری نمایش "
+"داده می‌شود."
+
+#: woocommerce-auto-coupon.php:81
+msgid "(auto apply)"
+msgstr "(خودکار)"
+
+#. Plugin Name of the plugin/theme
+msgid "Auto Coupon For WooCommerce"
+msgstr "کد تخفیف خودکار برای ووکامرس"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/2m.kabir/auto-coupon-for-woocommerce"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Automatically add the coupon to the customer's cart or the admin order page "
+"if the restrictions are met."
+msgstr ""
+"در صورتی که شرایط یک کد تخفیف ایجاد شود، به طور خودکار کد تخفیف را به سبد "
+"خرید مشتری یا صفحه سفارش مدیر اضافه کنید."
+
+#. Author of the plugin/theme
+msgid "Mohammad Mahdi Kabir"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.linkedin.com/in/mohammad-mahdi-kabir/"
+msgstr ""
