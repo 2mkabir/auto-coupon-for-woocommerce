@@ -78,7 +78,7 @@ if ( ! class_exists( 'Auto_Coupon_For_Woocommerce_Ya59' ) ) {
 		public function show_auto_apply_in_coupons_list( $column, $post_id ) {
 			if ( $column === 'coupon_code' ) {
 				$coupon = new WC_Coupon( $post_id );
-				echo $coupon->get_meta( '_auto_coupon_for_woocommerce_auto_apply', true, 'edit' ) ? ' ' . __( '(auto apply)', 'auto-coupon-for-woocommerce' ) : '';
+				echo $coupon->get_meta( '_auto_coupon_for_woocommerce_auto_apply', true, 'edit' ) ? ' ' . esc_html__( '(auto apply)', 'auto-coupon-for-woocommerce' ) : '';
 			}
 		}
 

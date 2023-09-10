@@ -4,6 +4,7 @@ Tags: woocommerce, coupons, discount
 Donate link: https://yekpay.io/2mkabir
 Requires at least: 5.0
 Tested up to: 6.2.2
+Stable tag: 1.0.0
 Requires PHP: 7.0
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -25,5 +26,5 @@ Please enter a description when you check \"Auto apply\" box, the description wi
 3. Automatically add the coupon to the admin order page.
 
 == Changelog ==
-= 1.0 =
+= 1.0.0 =
 * First version ever!
