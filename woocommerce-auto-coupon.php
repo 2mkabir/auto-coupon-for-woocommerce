@@ -12,7 +12,7 @@
  * Plugin Name:       Auto Coupon For WooCommerce
  * Plugin URI:        https://github.com/2m.kabir/auto-coupon-for-woocommerce
  * Description:       Automatically add the coupon to the customer's cart or the admin order page if the restrictions are met.
- * Version:           1.0.0
+ * Version:           1.0
  * Author:            Mohammad Mahdi Kabir
  * Author URI:        https://www.linkedin.com/in/mohammad-mahdi-kabir/
  * Text Domain:       auto-coupon-for-woocommerce
@@ -22,7 +22,7 @@
  * GitHub Plugin URI: https://github.com/2m.kabir/auto-coupon-for-woocommerce
  * GitHub Branch:     master
  * WC requires at least: 5.0.0
- * WC tested up to: 7.7.0
+ * WC tested up to: 8.1.1
  */
 
 defined( 'ABSPATH' ) || exit;
