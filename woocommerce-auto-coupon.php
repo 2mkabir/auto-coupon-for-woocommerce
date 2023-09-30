@@ -115,6 +115,7 @@ if ( ! class_exists( 'Auto_Coupon_For_Woocommerce_Ya59' ) ) {
 		}
 
         public function on_update_order($and_taxes, $order) {
+            remove_action('woocommerce_order_before_calculate_totals', array($this, 'on_update_order'), 10, 2);
             $coupons  = $this->get_auto_apply_coupons();
             $discounts = new WC_Discounts( $order );
             foreach ( $coupons as $coupon ) {
@@ -125,7 +126,8 @@ if ( ! class_exists( 'Auto_Coupon_For_Woocommerce_Ya59' ) ) {
                     $order->remove_coupon( $coupon->get_code( 'edit' ) );
                 }
             }
-            $this->recalculate_coupons($order, $discounts);
+            $order->recalculate_coupons($order, $discounts);
+            add_action('woocommerce_order_before_calculate_totals', array($this, 'on_update_order'), 10, 2);
         }
 
         private function get_auto_apply_coupons() {
@@ -145,50 +147,6 @@ if ( ! class_exists( 'Auto_Coupon_For_Woocommerce_Ya59' ) ) {
             }
             return $coupons;
         }
-
-        /**
-         * It's similar to recalculate_coupons() method in WC_Abstract_Order but without calculate_totals();
-         * I can't use recalculate_coupons() directly because at end of recalculate_coupons() call calculate_totals(). It's the infinite loop bug in here.
-         * @param $order
-         * @param $discounts
-         * @return void
-         * @throws ReflectionException
-         */
-        private function recalculate_coupons($order, $discounts){
-            foreach ( $order->get_items() as $item ) {
-                $item->set_total( $item->get_subtotal() );
-                $item->set_total_tax( $item->get_subtotal_tax() );
-            }
-            foreach ( $order->get_items( 'coupon' ) as $coupon_item ) {
-                $coupon_code = $coupon_item->get_code( 'edit' );
-                $coupon_id   = wc_get_coupon_id_by_code( $coupon_code );
-                if ( $coupon_id ) {
-                    $coupon_object = new WC_Coupon( $coupon_id );
-
-                } else {
-                    $coupon_object = new WC_Coupon();
-                    $coupon_object->set_props( (array) $coupon_item->get_meta( 'coupon_data', true ) );
-                    $coupon_object->set_code( $coupon_code );
-                    $coupon_object->set_virtual( true );
-                    if ( ! $coupon_object->get_amount() ) {
-                        if ( $order->get_prices_include_tax() ) {
-                            $coupon_object->set_amount( $coupon_item->get_discount() + $coupon_item->get_discount_tax() );
-                        } else {
-                            $coupon_object->set_amount( $coupon_item->get_discount() );
-                        }
-                        $coupon_object->set_discount_type( 'fixed_cart' );
-                    }
-                }
-                $discounts->apply_coupon( $coupon_object, false );
-            }
-            $set_coupon_discount_amounts = new ReflectionMethod('WC_Abstract_Order', 'set_coupon_discount_amounts');
-            $set_coupon_discount_amounts->setAccessible(true);
-            $set_coupon_discount_amounts->invoke($order, $discounts);
-            $set_item_discount_amounts = new ReflectionMethod('WC_Abstract_Order', 'set_item_discount_amounts');
-            $set_item_discount_amounts->setAccessible(true);
-            $set_item_discount_amounts->invoke($order, $discounts);
-        }
-
 	}
 
 	$Auto_Coupon_For_Woocommerce = Auto_Coupon_For_Woocommerce_Ya59::getInstance();
