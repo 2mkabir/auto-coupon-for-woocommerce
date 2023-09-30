@@ -22,6 +22,9 @@ Please enter a description when you check the "Auto apply" box; the description 
 == Installation ==
 1. Upload the plugin in the `/wp-content/plugins/` directory, or automatically install it through the 'New Plugin' menu in WordPress
 2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to Marketing > Coupons
+4. Create a coupon or visit an existing coupon
+5. Allow a coupon to be applied automatically by checking the "Auto apply" option in "General" tab.
 
 == Screenshots ==
 1. Allow a coupon to be applied automatically by checking the "Auto apply" option on the edit coupon page.
